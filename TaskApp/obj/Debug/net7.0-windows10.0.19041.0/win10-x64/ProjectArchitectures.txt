@@ -1,0 +1,1 @@
+C:\Users\harra\Desktop\Term 4\MauiTaskerAppV2\TaskApp\TaskApp.csproj;x64
