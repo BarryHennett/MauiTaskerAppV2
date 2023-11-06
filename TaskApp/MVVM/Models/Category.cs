@@ -18,6 +18,8 @@ namespace TaskApp.MVVM.Models
 
         public ObservableCollection<MyTask> Tasks { get; set; }
 
+        //this is the total amount of tasks
+
         private int totalTasks;
 
         public int TotalTasks
@@ -31,25 +33,20 @@ namespace TaskApp.MVVM.Models
                 }
             }
         }
-
         public Category()
         {
             Tasks = new ObservableCollection<MyTask>();
             UpdateTotalTasks();
         }
 
+        //this is my add task feature
         public void AddTask(MyTask task)
         {
             Tasks.Add(task);
             UpdateTotalTasks();
         }
 
-        public void RemoveTask(MyTask task)
-        {
-            Tasks.Remove(task);
-            UpdateTotalTasks();
-        }
-
+        //here the tasks are being updated
         public void UpdateTotalTasks()
         {
             TotalTasks = Tasks.Count;
