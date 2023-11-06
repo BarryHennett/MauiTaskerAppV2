@@ -58,7 +58,7 @@ namespace TaskApp.MVVM.ViewModels
             }
         }
 
-
+        //here is the colors for the category names
         private void FileData()
         {
             Categories = new ObservableCollection<Category>()
@@ -127,6 +127,7 @@ namespace TaskApp.MVVM.ViewModels
             UpdateData();
         }
 
+        //here the data is updating for the categories
         public void UpdateData()
         {
             foreach (var c in Categories)

@@ -13,6 +13,7 @@ public class NewTaskViewModel
     public Category SelectedCategory { get; set; }
 
     public NewTaskViewModel()
+        //here is the colors for the category tasks
     {
         Categories = new ObservableCollection<Category>()
         {
@@ -20,22 +21,23 @@ public class NewTaskViewModel
             {
                 Id = 1,
                 CategoryName = "Cleaning",
-                Color = "#ff0000"
+                Color = "#84B94A"
             },
             new Category
             {
                 Id = 2,
                 CategoryName = "Work/Uni",
-                Color = "#007BFF"
+                Color = "#E09735"
             },
             new Category
             {
                 Id = 3,
                 CategoryName = "Groceries",
-                Color = "#008000"
+                Color = "#D935E0"
             }
         };
 
+        //here i am adding the tasks to fill out the page and also to demonstrate the app
         Tasks = new ObservableCollection<MyTask>()
         {
             new MyTask
@@ -52,13 +54,13 @@ public class NewTaskViewModel
             },
             new MyTask
             {
-                TaskName = "Study for exam",
+                TaskName = "Study for Task App exam",
                 Completed = false,
                 CategoryId = 2,
             },
             new MyTask
             {
-                TaskName = "Finish Working on UI",
+                TaskName = "Finish Working on Back End",
                 Completed = false,
                 CategoryId = 2,
             },
@@ -76,7 +78,7 @@ public class NewTaskViewModel
             }
         };
     }
-
+    //here i have the new task add function
     public class TaskAddedEventArgs : EventArgs
     {
         public MyTask NewTask { get; }
@@ -87,6 +89,7 @@ public class NewTaskViewModel
         }
     }
 
+    //here i am carrying on with the add task function
    public void AddTask()
     {
         if (SelectedCategory != null)

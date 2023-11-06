@@ -34,7 +34,6 @@ namespace TaskApp.MVVM.Models
 
         public Category()
         {
-            // Initialize your Tasks collection as needed
             Tasks = new ObservableCollection<MyTask>();
             UpdateTotalTasks();
         }

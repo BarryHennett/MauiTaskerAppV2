@@ -2,18 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskApp.MVVM.Views.NewTaskView"
-             Title="Add New Task">
+             Title="Add New Task"
+             BackgroundColor="LightBlue">
 
+    <!--here i am defining the rows and columns for the grid-->
     <Grid RowDefinitions=".2*, .7*, .1*">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
+        <!--here i am creating a placeholder for the user to enter their new task-->
         <Entry Placeholder="Enter New Task"
                Text="{Binding Task}" 
                Style="{StaticResource Task}"/>
 
+        <!--here is a collection view for the catgories-->
         <CollectionView Grid.Row="1" 
                         Margin="15"
                         ItemsSource="{Binding Categories}">
@@ -34,7 +38,8 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
+        
+        <!--here is a button for adding the task-->
         <HorizontalStackLayout Grid.Row="2"
                                Margin="10"
                                Spacing="15"
