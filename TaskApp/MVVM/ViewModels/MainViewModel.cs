@@ -64,70 +64,87 @@ namespace TaskApp.MVVM.ViewModels
             Categories = new ObservableCollection<Category>()
             {
                 new Category
-                {
-                    Id = 1,
-                    CategoryName = "Cleaning",
-                    Color = "#ff0000"
-                },
-
-                new Category
-                {
-                    Id = 2,
-                    CategoryName = "Work/Uni",
-                    Color = "#008000"
-                },
-
-                new Category
-                {
-                    Id = 3,
-                    CategoryName = "Groceries",
-                    Color = "#007BFF"
-                },
+            {
+                Id = 1,
+                CategoryName = "Inventory Management",
+                Color = "#84B94A"
+            },
+            new Category
+            {
+                Id = 2,
+                CategoryName = "Order Processing",
+                Color = "#E09735"
+            },
+            new Category
+            {
+                Id = 3,
+                CategoryName = "Scheduling",
+                Color = "#D935E0"
+            },
+            new Category
+            {
+                Id= 4,
+                CategoryName = "Customer Interactions",
+                Color = "#FF5733"
+            }
             };
 
             Tasks = new ObservableCollection<MyTask>()
             {
-                new MyTask
+                  new MyTask
             {
-                TaskName = "Dishes",
+                TaskName = "Look over storage for products getting low",
                 Completed = false,
                 CategoryId = 1,
             },
             new MyTask
             {
-                TaskName = "Vacuum",
+                TaskName = "Add products to the grocery list if needed",
                 Completed = false,
                 CategoryId = 1,
             },
             new MyTask
             {
-                TaskName = "Study for exam",
+                TaskName = "Sort through orders",
                 Completed = false,
                 CategoryId = 2,
             },
             new MyTask
             {
-                TaskName = "Finish Working on UI",
+                TaskName = "Pack orders",
                 Completed = false,
                 CategoryId = 2,
             },
+
             new MyTask
             {
-                TaskName = "Buy Flour",
+                TaskName = "Look through day",
                 Completed = false,
                 CategoryId = 3,
             },
             new MyTask
             {
-                TaskName = "Buy Protein Powder",
+                TaskName = "Deligate Jobs to staff",
                 Completed = false,
                 CategoryId = 3,
+            },
+            new MyTask
+            {
+                TaskName = "Check Google Reviews and answer new reviews",
+                Completed = false,
+                CategoryId = 4,
+            },
+            new MyTask
+            {
+                TaskName = "Check Emails and Respond to emails",
+                Completed = false,
+                CategoryId = 4,
             }
             };
             UpdateData();
         }
 
-        //here the data is updating for the categories
+        //here the data is updating for the categories with completed and uncompleted tasks
         public void UpdateData()
         {
             foreach (var c in Categories)
@@ -140,14 +157,15 @@ namespace TaskApp.MVVM.ViewModels
                                 where t.Completed == true
                                 select t;
 
-                var noCompleted = from t in tasks
+                var unCompleted = from t in tasks
                                   where t.Completed == false
                                   select t;
 
-                c.PendingTasks = noCompleted.Count();
+                c.PendingTasks = unCompleted.Count();
                 c.Percentage = (float)completed.Count() / (float)tasks.Count();
             }
 
+            //This is the progress bar and when a task is completed the task bar increases
             foreach (var t in Tasks)
             {
                 var catColor =

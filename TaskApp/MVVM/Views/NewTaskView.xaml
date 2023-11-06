@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskApp.MVVM.Views.NewTaskView"
              Title="Add New Task"
-             BackgroundColor="LightBlue">
+             BackgroundColor="LightPink">
 
     <!--here i am defining the rows and columns for the grid-->
     <Grid RowDefinitions=".2*, .7*, .1*">

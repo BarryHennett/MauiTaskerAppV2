@@ -20,63 +20,82 @@ public class NewTaskViewModel
             new Category
             {
                 Id = 1,
-                CategoryName = "Cleaning",
+                CategoryName = "Inventory Management",
                 Color = "#84B94A"
             },
             new Category
             {
                 Id = 2,
-                CategoryName = "Work/Uni",
+                CategoryName = "Order Processing",
                 Color = "#E09735"
             },
             new Category
             {
                 Id = 3,
-                CategoryName = "Groceries",
+                CategoryName = "Scheduling",
                 Color = "#D935E0"
+            },
+            new Category
+            {
+                Id= 4,
+                CategoryName = "Customer Interactions",
+                Color = "Pink"
             }
         };
 
-        //here i am adding the tasks to fill out the page and also to demonstrate the app
+        //here i am adding the default tasks to the page
         Tasks = new ObservableCollection<MyTask>()
         {
-            new MyTask
+                new MyTask
             {
-                TaskName = "Dishes",
+                TaskName = "Look over storage for products getting low",
                 Completed = false,
                 CategoryId = 1,
             },
             new MyTask
             {
-                TaskName = "Vacuum",
+                TaskName = "Add products to the grocery list if needed",
                 Completed = false,
                 CategoryId = 1,
             },
             new MyTask
             {
-                TaskName = "Study for Task App exam",
+                TaskName = "Sort through orders",
                 Completed = false,
                 CategoryId = 2,
             },
             new MyTask
             {
-                TaskName = "Finish Working on Back End",
+                TaskName = "Pack orders",
                 Completed = false,
                 CategoryId = 2,
             },
+
             new MyTask
             {
-                TaskName = "Buy Flour",
+                TaskName = "Look through day",
                 Completed = false,
                 CategoryId = 3,
             },
             new MyTask
             {
-                TaskName = "Buy Protein Powder",
+                TaskName = "Deligate Jobs to staff",
                 Completed = false,
                 CategoryId = 3,
+            },
+            new MyTask
+            {
+                TaskName = "Check Google Reviews and answer new reviews",
+                Completed = false,
+                CategoryId = 4,
+            },
+            new MyTask
+            {
+                TaskName = "Check Emails and Respond to emails",
+                Completed = false,
+                CategoryId = 4,
             }
-        };
+            };
     }
     //here i have the new task add function
     public class TaskAddedEventArgs : EventArgs
